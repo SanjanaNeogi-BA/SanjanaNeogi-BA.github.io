@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanjana Neogi | Analytics & Sustainability</title>
+  <meta name="description" content="Portfolio of Sanjana Neogi — Analyst with 2 years' experience in global supply chain analytics (Novartis) and current MSc Business Analytics student at Warwick Business School. Sustainability Lead at WMG enabling a construction SME's Net Zero 2030 roadmap." />
+  <meta property="og:title" content="Sanjana Neogi | Analytics & Sustainability" />
+  <meta property="og:description" content="Analytics portfolio: supply chain, sustainability reporting, optimisation, dashboards, and Python projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/1?v=4" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #11162a;
+      --muted: #93a4bd;
+      --text: #e6eefc;
+      --accent: #60a5fa;
+      --pill: #0ea5e9;
+      --ring: rgba(96,165,250,0.5);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(96,165,250,0.15), transparent),
+                  radial-gradient(900px 500px at -10% 20%, rgba(14,165,233,0.12), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+      background: linear-gradient(to bottom, rgba(11,16,32,0.9), rgba(11,16,32,0.6) 60%, transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 12px 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .nav a.brand { font-weight: 800; letter-spacing: 0.5px; color: white; }
+    .nav .links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav .links a { color: var(--muted); font-weight: 600; }
+    .nav .links a:hover { color: var(--text); }
+
+    .hero { padding: 72px 0 32px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; }
+    .hero h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.1; margin: 0 0 12px; }
+    .hero p.lead { font-size: clamp(16px, 2.5vw, 18px); color: var(--muted); margin: 0; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(96,165,250,0.12); border: 1px solid rgba(96,165,250,0.35); color: #dbeafe; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.4px; }
+    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .btn { border: 1px solid rgba(148,163,184,0.25); color: var(--text); padding: 10px 14px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+    .btn.primary { background: linear-gradient(135deg, #2563eb, #0ea5e9); border-color: transparent; box-shadow: 0 8px 24px rgba(14,165,233,0.25); }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(96,165,250,0.25); }
+
+    section { padding: 42px 0; }
+    h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: 0.5px; }
+    .grid { display: grid; gap: 16px; }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(148,163,184,0.15); border-radius: 16px; padding: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(2,6,23,0.5); }
+    .card small { color: var(--muted); font-weight: 600; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.4px; background: rgba(14,165,233,0.12); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.3); }
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .exp {
+      display: grid; grid-template-columns: 1fr; gap: 14px;
+    }
+    .exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: start; }
+    .exp-item .when { color: var(--muted); font-weight: 700; letter-spacing: 0.3px; font-size: 12px; }
+    .exp-item .role { font-weight: 800; }
+    .exp-item .org { color: #cbd5e1; font-weight: 700; }
+    .exp-item ul { margin: 8px 0 0 18px; padding: 0; }
+
+    footer { border-top: 1px solid rgba(148,163,184,0.15); padding: 28px 0 60px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sanjana Neogi",
+    "jobTitle": "Analyst | Sustainability & Supply Chain",
+    "email": "mailto:neogisanj@gmail.com",
+    "telephone": "+44 7503 239328",
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Warwick Business School"},
+      {"@type": "CollegeOrUniversity", "name": "Kalinga Institute of Industrial Technology"}
+    ],
+    "sameAs": ["https://www.linkedin.com/in/sanjananeogi"]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#">Sanjana Neogi</a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <div>
+        <span class="badge">Analytics • Sustainability • Supply Chain</span>
+        <h1>Building data products that simplify decisions and drive Net Zero.</h1>
+        <p class="lead">MSc Business Analytics (Warwick) with 2 years in Novartis Global Supply Chain. Currently Sustainability Lead at WMG helping a construction SME roadmap to Net Zero 2030 and delivering FY24–25 carbon reporting.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stack">
+          <span class="pill">Power BI</span>
+          <span class="pill">Alteryx</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Optimisation</span>
+          <span class="pill">ESG</span>
+          <span class="pill">Supply Chain</span>
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">Open to roles in data & analytics across sustainability, supply chain, and finance.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>I'm an analytics professional combining supply chain and sustainability expertise. At Novartis, I built automated data workflows and dashboards; at WMG, I designed an emissions reporting framework and Net Zero roadmap for a construction SME. I enjoy turning messy datasets into reliable, decision-ready insights.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="exp">
+        <div class="exp-item card">
+          <div class="when">Jun 2025 — Present</div>
+          <div>
+            <div class="role">Sustainability Lead</div>
+            <div class="org">WMG (Warwick Manufacturing Group)</div>
+            <ul>
+              <li>Led FY24–25 GHG inventory (Scopes 1–3) and codified a repeatable reporting framework.</li>
+              <li>Engineered Python/Excel pipelines consolidating fragmented data; cut data-gathering time by ~40%.</li>
+              <li>Improved data integrity by ~25% via process redesign and stakeholder alignment in finance & procurement.</li>
+              <li>Presented governance approach underpinning a Net Zero 2030 roadmap.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item card">
+          <div class="when">Aug 2022 — Sep 2024</div>
+          <div>
+            <div class="role">Associate Analyst — Global Supply Chain</div>
+            <div class="org">Novartis</div>
+            <ul>
+              <li>Built automated Alteryx/SQL workflows to speed consolidation by ~60% and enhance inventory planning.</li>
+              <li>Owned UAT and delivered KPI dashboards meeting quality and usability standards.</li>
+              <li>Enhanced SAP data governance, documenting logic for digital transformations.</li>
+              <li>Analyzed sustainability KPIs for 800+ suppliers to support vendor selection and transparency.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item card">
+          <div class="when">Jan 2022 — Jul 2022</div>
+          <div>
+            <div class="role">Intern — Data Insights & Analytics</div>
+            <div class="org">Novartis</div>
+            <ul>
+              <li>Delivered monthly KPI packs for logistics, procurement, and production across 5 sites.</li>
+              <li>Developed a tool to quantify Scope 3 (transport) emissions across 4 divisions.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item card">
+          <div class="when">2021</div>
+          <div>
+            <div class="role">Technical Intern</div>
+            <div class="org">Highradius</div>
+            <ul>
+              <li>Built a full‑stack A/R app (Python, Flask, React, MySQL) to automate invoice monitoring.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item card">
+          <div class="when">2019–2020</div>
+          <div>
+            <div class="role">Operations Intern (Manufacturing)</div>
+            <div class="org">ITC</div>
+            <ul>
+              <li>Created an RPA workflow with OMRON cobot to automate packaging line tasks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid cards">
+        <article class="card">
+          <small>2025 • MSc Dissertation</small>
+          <h3>Hospital Accessibility Scenario Model</h3>
+          <p>Interactive Python/Streamlit model linking car‑park congestion to missed appointments and emissions; informs NHS Midlands planning with actionable KPIs and scenario testing.</p>
+          <div class="stack"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Matplotlib</span><span class="pill">Streamlit</span></div>
+        </article>
+        <article class="card">
+          <small>2024 • Novartis</small>
+          <h3>Supplier Sustainability & KPI Platform</h3>
+          <p>Power BI + Alteryx toolkit to assess 800+ vendors against sustainability KPIs; accelerated contract reviews and reduced turnaround times.</p>
+          <div class="stack"><span class="pill">Power BI</span><span class="pill">Alteryx</span><span class="pill">SQL</span></div>
+        </article>
+        <article class="card">
+          <small>2020–2021 • B.Tech Capstone</small>
+          <h3>Agent‑Based COVID‑19 Simulation</h3>
+          <p>Python MESA model with demographics, comorbidities, and behavior; explored policy scenarios (mobility, vaccination, PPE) and their impact on transmission.</p>
+          <div class="stack"><span class="pill">Python</span><span class="pill">MESA</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid cards">
+        <div class="card">
+          <h3>Data & BI</h3>
+          <div class="stack">
+            <span class="pill">Power BI (DAX)</span>
+            <span class="pill">Tableau</span>
+            <span class="pill">Looker</span>
+            <span class="pill">Alteryx</span>
+            <span class="pill">Excel</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Analytics & Engineering</h3>
+          <div class="stack">
+            <span class="pill">Python</span>
+            <span class="pill">R</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Azure</span>
+            <span class="pill">GCP</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Domains</h3>
+          <div class="stack">
+            <span class="pill">Supply Chain</span>
+            <span class="pill">Sustainability / ESG</span>
+            <span class="pill">Optimisation</span>
+            <span class="pill">Data Governance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Based in Solihull, UK. Open to roles across the UK and Europe.</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:neogisanj@gmail.com">neogisanj@gmail.com</a> &nbsp;•&nbsp;
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sanjananeogi" target="_blank">sanjananeogi</a>
+        </p>
+        <p>
+          <a class="btn" href="assets/Sanjana_Neogi_CV.pdf">Download CV (PDF)</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Sanjana Neogi • Built for GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
