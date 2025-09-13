@@ -41,6 +41,7 @@
     .links{display:flex;gap:18px;flex-wrap:wrap}
     .links a{color:var(--muted);font-weight:600}
     .links a:hover{color:var(--text)}
+    .muted{color:var(--muted)}
 
     /* ===== Sections ===== */
     section{padding:52px 0}
@@ -66,12 +67,15 @@
     .stack{display:flex;flex-wrap:wrap;gap:10px}
 
     /* ===== Projects ===== */
-    .project-card{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      height:100%;
-    }
+
+      .project-card{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        height:100%;
+      }
+      .project-card a{margin-top:auto}
+
 
     /* ===== Roadmap timeline ===== */
     .roadmap{position:relative}
@@ -171,7 +175,7 @@
       <h2 class="reveal">About — a model that keeps learning</h2>
       <div class="roadmap-canvas">
         <svg viewBox="0 0 100 200" preserveAspectRatio="xMinYMin meet" class="roadmap-svg">
-          <path d="M 50 0 C 30 25, 70 50, 50 75 S 30 125, 50 150 S 70 175, 50 200" fill="none" stroke="#238636" stroke-width="2" stroke-linecap="round" stroke-dasharray="1, 5" />
+          <path d="M 50 0 L 50 200" fill="none" stroke="#238636" stroke-width="2" stroke-linecap="round" stroke-dasharray="1, 5" />
           <circle cx="50" cy="0" r="1.5" fill="#56d46d" />
           <circle cx="50" cy="40" r="1.5" fill="#56d46d" />
           <circle cx="50" cy="80" r="1.5" fill="#56d46d" />
@@ -182,27 +186,49 @@
         <article class="card roadcard road-left" style="top:0%">
           <h3>First Pass: Computer Science Foundations</h3>
           <p>Computer Science taught me to think like a builder—hardware bits, software stacks, and the habit of continuous learning.</p>
-          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=CS" alt="CS" style="top:-14px; left:-14px;" />
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=CS" alt="CS" style="top:-14px; right:-14px;" />
         </article>
-        <article class="card roadcard road-right" style="top:22%">
+        <article class="card roadcard road-right" style="top:20%">
           <h3>Feature Engineering: Internships</h3>
           <p>ITC (manufacturing), HighRadius (fintech), and Novartis (supply chain). Different sectors, same goal: find the signal in the noise.</p>
-          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=INT" alt="Internships" style="top:-14px; right:-14px;" />
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=INT" alt="Internships" style="top:-14px; left:-14px;" />
         </article>
-        <article class="card roadcard road-left" style="top:44%">
+        <article class="card roadcard road-left" style="top:40%">
           <h3>Training the Model: Novartis</h3>
           <p>2 years in Global Supply Chain: automated Alteryx/SQL workflows, KPI dashboards, and sustainability analytics for 800+ vendors.</p>
-          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=NOV" alt="Novartis" style="top:-14px; left:-14px;" />
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=NOV" alt="Novartis" style="top:-14px; right:-14px;" />
         </article>
-        <article class="card roadcard road-right" style="top:66%">
+        <article class="card roadcard road-right" style="top:60%">
           <h3>Re‑train: Warwick MSc</h3>
           <p>Shifted from cool tech to business outcomes. Built models for optimisation (83%), supply chain analytics (81%), and statistics.</p>
-          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=MSc" alt="MSc" style="top:-14px; right:-14px;" />
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=MSc" alt="MSc" style="top:-14px; left:-14px;" />
         </article>
-        <article class="card roadcard road-left" style="top:88%">
+        <article class="card roadcard road-left" style="top:80%">
           <h3>Leading Change: WMG</h3>
           <p>Team lead for GHG inventory & reporting; cut data‑gathering time ~40%, improved integrity ~25%, and set up a repeatable reporting cycle.</p>
-          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=WMG" alt="WMG" style="top:-14px; left:-14px;" />
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=WMG" alt="WMG" style="top:-14px; right:-14px;" />
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects">
+      <h2 class="reveal">Projects</h2>
+      <div class="grid cards">
+        <article class="card reveal project-card">
+          <h3>MSc Dissertation: Monte Carlo Simulation for Hospital Car Parking</h3>
+          <p class="muted">Simulated parking demand to optimise space allocation and cut patient wait times.</p>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">View on GitHub</a>
+        </article>
+        <article class="card reveal project-card">
+          <h3>Agent AI in Supply Chain Optimisation</h3>
+          <p class="muted">Applied agent-based AI to enhance decision-making and scenario planning in supply chains.</p>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">View on GitHub</a>
+        </article>
+        <article class="card reveal project-card">
+          <h3>Strategy Dashboard</h3>
+          <p class="muted">Built an interactive dashboard to visualise strategic KPIs for data-driven discussions.</p>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">View on GitHub</a>
         </article>
       </div>
     </section>
