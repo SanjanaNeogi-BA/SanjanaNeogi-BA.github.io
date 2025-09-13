@@ -2,74 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Analytics Portfolio — Sanjana Neogi</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanjana Neogi | AI, Analytics & Strategy</title>
+  <meta name="description" content="Portfolio of Sanjana Neogi — Analyst with experience in global supply chain analytics and sustainability. MSc Business Analytics (Warwick Business School)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #0b1020; --fg: #c9d1d9; --card: #161b22; --border: #30363d; --brand: #238636; --brand2: #56d46d; }
-    html, body { height: 100%; }
-    body { font-family: 'Inter', sans-serif; 
-  background: radial-gradient(1200px 600px at 70% -10%, rgba(96,165,250,0.15), transparent),
-              radial-gradient(900px 500px at -10% 20%, rgba(14,165,233,0.12), transparent),
-              var(--bg);
-  color: var(--fg);
-}
-    .text-gradient { background-image: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    :root {
+      --bg: #0b1020;
+      --card: #11162a;
+      --muted: #93a4bd;
+      --text: #e6eefc;
+      --accent: #60a5fa;
+      --pill: #0ea5e9;
+      --ring: rgba(96,165,250,0.5);
+      --border: rgba(148,163,184,0.15);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text);
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(96,165,250,0.15), transparent),
+                  radial-gradient(900px 500px at -10% 20%, rgba(14,165,233,0.12), transparent), var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
 
-    /* Cards */
-    .project-card, .roadmap-card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(148,163,184,0.15); border-radius: 16px; padding: 16px; box-shadow: 0 8px 24px rgba(2,6,23,0.25); transition: transform .2s ease, box-shadow .2s ease; }
-    .project-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(2,6,23,0.5); }
-/* Avoid transform on roadmap cards to prevent overriding absolute translateX offsets */
-.roadmap-card:hover { box-shadow: 0 10px 30px rgba(2,6,23,0.5); }
+    /* ===== Top Nav ===== */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
+      background:linear-gradient(to bottom, rgba(11,16,32,.9), rgba(11,16,32,.6) 60%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;max-width:1100px;margin:0 auto}
+    .brand{font-weight:800;letter-spacing:.5px;color:#fff}
+    .links{display:flex;gap:18px;flex-wrap:wrap}
+    .links a{color:var(--muted);font-weight:600}
+    .links a:hover{color:var(--text)}
 
-    /* Roadmap responsiveness: stack on small screens, absolute only on md+ */
-    .roadmap-card { position: static; padding: 1.25rem; z-index: 10; }
-    .roadmap-container { position: relative; width: 100%; }
-    .road-svg { display: none; pointer-events: none; }
+    /* ===== Sections ===== */
+    section{padding:52px 0}
+    h2{font-size:22px;margin:0 0 18px;letter-spacing:.5px}
 
-    @media (min-width: 768px) {
-      .roadmap-card { position: absolute; padding: 1.5rem; }
-      .road-svg { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-      /* Provide a fixed canvas height on md+ so absolute cards never overlap the footer */
-      .roadmap-container { height: 1600px; }
+    /* ===== Hero ===== */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,5vw,46px);line-height:1.1;margin:0 0 12px}
+    .lead{font-size:clamp(16px,2.5vw,18px);color:var(--muted);margin:0}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.35);color:#dbeafe;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.4px}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:12px;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+    .btn.primary{background:linear-gradient(135deg,#2563eb,#0ea5e9);border-color:transparent;box-shadow:0 8px 24px rgba(14,165,233,.25)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(96,165,250,.25)}
+    .avatar{width:160px;height:160px;border-radius:24px;border:1px solid var(--border);object-fit:cover;box-shadow:0 10px 30px rgba(2,6,23,.5)}
+
+    /* ===== Pitch cards ===== */
+    .grid{display:grid;gap:16px}
+    .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:16px;transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(2,6,23,.5)}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.3px;background:rgba(14,165,233,.12);color:#7dd3fc;border:1px solid rgba(14,165,233,.35)}
+    .stack{display:flex;flex-wrap:wrap;gap:10px}
+
+    /* ===== Roadmap timeline ===== */
+    .roadmap{position:relative}
+    .roadmap-canvas{position:relative}
+    .roadmap-svg{display:none}
+    .roadcard{position:static}
+    .roadimg{position:absolute;width:72px;height:72px;border-radius:12px;border:1px solid var(--border);background:#0f1319;object-fit:cover;z-index:5}
+    .roadcard.card{border-radius:20px}
+    @media(min-width:768px){
+      .roadmap-svg{display:block;position:absolute;inset:0;pointer-events:none}
+      .roadmap-canvas{height:1600px}
+      .roadcard{position:absolute;width:48%}
+      .road-left{left:2%}
+      .road-right{right:2%}
     }
 
-    /* Subtle focus ring for accessibility */
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--brand2); outline-offset: 2px; border-radius: 10px; }
-      /* Skills UI (old site style) */
-    .skill-card { border-radius: 20px; padding: 24px; }
-    .pill { display:inline-block; padding:8px 12px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:0.3px; background:rgba(14,165,233,0.12); color:#7dd3fc; border:1px solid rgba(14,165,233,0.35); }
-    .pill-row { display:flex; flex-wrap:wrap; gap:10px; }
+    /* ===== Skills ===== */
+    .skill-card{border-radius:20px;padding:24px}
+
+    /* ===== Reveal Animations ===== */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    footer{border-top:1px solid var(--border);padding:28px 0 60px;color:var(--muted);font-size:14px}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
   </style>
 </head>
-<body class="bg-[#0b1020] text-[#c9d1d9]">
-  <div class="container mx-auto max-w-4xl p-6 md:p-12">
-    <!-- Header -->
-    <header class="flex flex-col md:flex-row items-center justify-center text-center py-12 md:py-20 gap-8">
-      <img src="https://placehold.co/200x200/56d46d/0d1117?text=Your+Photo" alt="Professional headshot placeholder" class="rounded-full w-32 h-32 md:w-48 md:h-48 border-2 border-[#238636]" />
-      <div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight text-white mb-4">
-          <span class="text-gradient">Data‑driven decisions, real‑world impact.</span>
-        </h1>
-        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6 text-gray-300">
-          I translate complex datasets into actionable insights—driving strategic growth and operational excellence across supply chains and sustainability.
-        </p>
-        <p class="text-sm text-gray-400">
-          Industries: Manufacturing, Fintech, Pharma/Supply Chain. <br class="md:hidden" /> Open to roles in Supply Chain Analytics, Strategy & Operations, and Sustainability.
-        </p>
+<body>
+  <!-- ===== Top Navigation ===== -->
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">Sanjana Neogi</a>
+      <div class="links">
+        <a href="#intro">Intro</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
-    </header>
+    </nav>
+  </header>
 
-    <!-- About / Roadmap -->
-    <section id="about" class="py-12 md:py-16">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-white">My Learning Roadmap</h2>
+  <main class="wrap">
+    <!-- ===== Name + Photo ===== -->
+    <section class="hero" id="home">
+      <div>
+        <span class="badge">Analytics • Strategy & Operations • Sustainability • Supply Chain</span>
+        <h1 class="reveal">Sanjana Neogi — engineering clarity into strategy with data‑driven design and operational precision.</h1>
+        <p class="lead reveal">MSc Business Analytics (Warwick) with 2+ years in global supply chain (Novartis). I design simple, reliable analytics that move KPIs in the real world.</p>
+        <div class="cta reveal">
+          <a class="btn primary" href="#skills">View Skills</a>
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn" href="assets/Sanjana_Neogi_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="card reveal" style="display:flex;gap:16px;align-items:center;justify-content:center;flex-direction:column">
+        <img class="avatar" src="https://placehold.co/320x320/1e293b/ffffff?text=Sanjana" alt="Sanjana professional headshot" />
+        <div class="stack">
+          <span class="pill">Power BI (DAX)</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Tableau</span>
+          <span class="pill">Looker</span>
+          <span class="pill">Alteryx</span>
+        </div>
+      </div>
+    </section>
 
-      <div class="roadmap-container">
-        <!-- Curved dashed path on md+ -->
-        <svg viewBox="0 0 100 200" preserveAspectRatio="xMinYMin meet" class="road-svg">
+    <!-- ===== Short Pitch (skills/areas of expertise) ===== -->
+    <section id="intro">
+      <h2 class="reveal">What I do</h2>
+      <div class="grid cards">
+        <article class="card reveal">
+          <h3>Supply Chain Analytics</h3>
+          <p class="muted">Forecasting, inventory, and KPI design that reduce stockouts and waste. ETL and data quality baked‑in.</p>
+          <div class="stack"><span class="pill">S&OP</span><span class="pill">SAP data</span><span class="pill">Lead‑time</span><span class="pill">Visual KPIs</span></div>
+        </article>
+        <article class="card reveal">
+          <h3>Sustainability & ESG</h3>
+          <p class="muted">GHG Scope 1–3 reporting, audit‑ready data pipelines, and governance. Net Zero roadmaps grounded in operations.</p>
+          <div class="stack"><span class="pill">Scope 1–3</span><span class="pill">Data governance</span><span class="pill">Assurance</span></div>
+        </article>
+        <article class="card reveal">
+          <h3>Decision Products</h3>
+          <p class="muted">Dashboards and tools that make good decisions obvious. Storytelling, design systems, and stakeholder alignment.</p>
+          <div class="stack"><span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">Streamlit</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== About (Roadmap) ===== -->
+    <section id="about" class="roadmap">
+      <h2 class="reveal">About — a model that keeps learning</h2>
+      <div class="roadmap-canvas">
+        <svg viewBox="0 0 100 200" preserveAspectRatio="xMinYMin meet" class="roadmap-svg">
           <path d="M 50 0 C 30 25, 70 50, 50 75 S 30 125, 50 150 S 70 175, 50 200" fill="none" stroke="#238636" stroke-width="2" stroke-linecap="round" stroke-dasharray="1, 5" />
           <circle cx="50" cy="0" r="1.5" fill="#56d46d" />
           <circle cx="50" cy="40" r="1.5" fill="#56d46d" />
@@ -78,135 +169,92 @@
           <circle cx="50" cy="160" r="1.5" fill="#56d46d" />
         </svg>
 
-        <!-- Cards: stacked vertically by default; absolutely placed along the path on md+ -->
-        <div class="roadmap-card w-full md:w-1/2 md:top-[0%] md:left-1/2 md:-translate-x-[110%]">
-          <h3 class="font-bold text-lg text-white">1. First Pass: Computer Science Foundations</h3>
-          <p class="mt-2 text-gray-300">Computer Science got me thinking like a builder—hardware bits, software stacks, and a habit of continuous learning.</p>
-        </div>
-
-        <div class="roadmap-card w-full md:w-1/2 md:top-[22%] md:left-1/2 md:translate-x-[10%]">
-          <h3 class="font-bold text-lg text-white">2. Feature Engineering: Real‑World Internships</h3>
-          <p class="mt-2 text-gray-300">ITC (manufacturing), HighRadius (fintech), Novartis (supply chain). Different sectors, same game: find the signal in the noise.</p>
-        </div>
-
-        <div class="roadmap-card w-full md:w-1/2 md:top-[44%] md:left-1/2 md:-translate-x-[110%]">
-          <h3 class="font-bold text-lg text-white">3. Training the Model: Novartis Full‑Time</h3>
-          <p class="mt-2 text-gray-300">Learned how analytics unclogs real processes. Day 1 I heard “KPI”, Googled it at lunch—then spent the year building them.</p>
-        </div>
-
-        <div class="roadmap-card w-full md:w-1/2 md:top-[66%] md:left-1/2 md:translate-x-[10%]">
-          <h3 class="font-bold text-lg text-white">4. Re‑training for Business: The Master’s</h3>
-          <p class="mt-2 text-gray-300">Shifted from “cool tech” to “business outcomes”. Less code for code’s sake, more impact per query.</p>
-        </div>
-
-        <div class="roadmap-card w-full md:w-1/2 md:top-[88%] md:left-1/2 md:-translate-x-[110%]">
-          <h3 class="font-bold text-lg text-white">5. Leading the Change: WMG Capstone</h3>
-          <p class="mt-2 text-gray-300">Took the toolkit to a live problem—led a team, aligned stakeholders, and shipped an analytics solution that stuck.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-12 md:py-16">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-white">Featured Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="project-card p-6">
-          <h3 class="text-lg font-semibold text-white mb-2">Supply Chain Optimisation</h3>
-          <p class="text-gray-400 text-sm mb-4">Forecasting + inventory policy tuning reduced stockouts by 15% and cut waste. MSE tracked, confidence bands included.</p>
-          <a href="#" class="text-[#56d46d] font-medium hover:underline">View Project →</a>
+        <article class="card roadcard road-left" style="top:0%">
+          <h3>First Pass: Computer Science Foundations</h3>
+          <p>Computer Science taught me to think like a builder—hardware bits, software stacks, and the habit of continuous learning.</p>
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=CS" alt="CS" style="top:-14px; left:-14px;" />
         </article>
-        <article class="project-card p-6">
-          <h3 class="text-lg font-semibold text-white mb-2">Customer Churn Signals</h3>
-          <p class="text-gray-400 text-sm mb-4">Behavioural features + SHAP insights drove a targeted retention playbook and a 10% churn drop.</p>
-          <a href="#" class="text-[#56d46d] font-medium hover:underline">View Project →</a>
+        <article class="card roadcard road-right" style="top:22%">
+          <h3>Feature Engineering: Internships</h3>
+          <p>ITC (manufacturing), HighRadius (fintech), and Novartis (supply chain). Different sectors, same goal: find the signal in the noise.</p>
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=INT" alt="Internships" style="top:-14px; right:-14px;" />
         </article>
-        <article class="project-card p-6">
-          <h3 class="text-lg font-semibold text-white mb-2">Marketing ROI Dashboard</h3>
-          <p class="text-gray-400 text-sm mb-4">Budget-to-impact lens for campaign ROI with drill‑downs and confidence intervals for lift.</p>
-          <a href="#" class="text-[#56d46d] font-medium hover:underline">View Project →</a>
+        <article class="card roadcard road-left" style="top:44%">
+          <h3>Training the Model: Novartis</h3>
+          <p>2 years in Global Supply Chain: automated Alteryx/SQL workflows, KPI dashboards, and sustainability analytics for 800+ vendors.</p>
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=NOV" alt="Novartis" style="top:-14px; left:-14px;" />
+        </article>
+        <article class="card roadcard road-right" style="top:66%">
+          <h3>Re‑train: Warwick MSc</h3>
+          <p>Shifted from cool tech to business outcomes. Built models for optimisation (83%), supply chain analytics (81%), and statistics.</p>
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=MSc" alt="MSc" style="top:-14px; right:-14px;" />
+        </article>
+        <article class="card roadcard road-left" style="top:88%">
+          <h3>Leading Change: WMG</h3>
+          <p>Team lead for GHG inventory & reporting; cut data‑gathering time ~40%, improved integrity ~25%, and set up a repeatable reporting cycle.</p>
+          <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=WMG" alt="WMG" style="top:-14px; left:-14px;" />
         </article>
       </div>
     </section>
 
-    <!-- Skills & Certifications -->
-    <section id="skills" class="py-12 md:py-16">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 text-white">Skills & Certifications</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Data & BI -->
-        <div class="project-card skill-card">
-          <h3 class="text-xl font-extrabold text-white mb-4">Data & BI</h3>
-          <div class="pill-row">
-            <span class="pill">Power BI (DAX)</span>
-            <span class="pill">Tableau</span>
-            <span class="pill">Looker</span>
-            <span class="pill">Qlik Sense</span>
-            <span class="pill">Alteryx</span>
-            <span class="pill">Excel (Power Query)</span>
-            <span class="pill">Data Modelling</span>
-            <span class="pill">Data Visualization</span>
+    <!-- ===== Skills & Certifications ===== -->
+    <section id="skills">
+      <h2 class="reveal">Skills & Certifications</h2>
+      <div class="grid cards">
+        <div class="card skill-card reveal">
+          <h3>Data & BI</h3>
+          <div class="stack">
+            <span class="pill">Power BI (DAX)</span><span class="pill">Tableau</span><span class="pill">Looker</span><span class="pill">Qlik Sense</span><span class="pill">Alteryx</span><span class="pill">Excel (Power Query)</span><span class="pill">Data Modelling</span><span class="pill">Data Visualization</span>
           </div>
         </div>
-
-        <!-- Analytics & Engineering -->
-        <div class="project-card skill-card">
-          <h3 class="text-xl font-extrabold text-white mb-4">Analytics & Engineering</h3>
-          <div class="pill-row">
-            <span class="pill">Python (Pandas, NumPy, Plotly, scikit‑learn)</span>
-            <span class="pill">R</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Azure</span>
-            <span class="pill">GCP</span>
-            <span class="pill">Streamlit</span>
-            <span class="pill">Git / GitHub</span>
-            <span class="pill">Optimisation (OR‑Tools, PuLP)</span>
-            <span class="pill">A/B testing & Inference</span>
+        <div class="card skill-card reveal">
+          <h3>Analytics & Engineering</h3>
+          <div class="stack">
+            <span class="pill">Python (Pandas, NumPy, Plotly, scikit‑learn)</span><span class="pill">R</span><span class="pill">SQL</span><span class="pill">Azure</span><span class="pill">GCP</span><span class="pill">Streamlit</span><span class="pill">Git / GitHub</span><span class="pill">Optimisation (OR‑Tools, PuLP)</span><span class="pill">A/B testing & Inference</span>
           </div>
         </div>
-
-        <!-- Domains -->
-        <div class="project-card skill-card">
-          <h3 class="text-xl font-extrabold text-white mb-4">Domains</h3>
-          <div class="pill-row">
-            <span class="pill">Supply Chain Analytics</span>
-            <span class="pill">Sustainability / ESG</span>
-            <span class="pill">Operations & Strategy</span>
-            <span class="pill">Data Governance</span>
-            <span class="pill">Forecasting</span>
-            <span class="pill">KPI Design</span>
-            <span class="pill">Dashboard Storytelling</span>
+        <div class="card skill-card reveal">
+          <h3>Domains</h3>
+          <div class="stack">
+            <span class="pill">Supply Chain</span><span class="pill">Sustainability / ESG</span><span class="pill">Operations & Strategy</span><span class="pill">Data Governance</span><span class="pill">Forecasting</span><span class="pill">KPI Design</span><span class="pill">Dashboard Storytelling</span>
           </div>
         </div>
       </div>
-
-      <!-- Certifications -->
-      <div class="project-card skill-card mt-6">
-        <h3 class="text-xl font-extrabold text-white mb-4">Certifications</h3>
-        <div class="pill-row">
-          <span class="pill">Coursera: Data Analysis/Visualization</span>
-          <span class="pill">Coursera: SQL/Python</span>
-          <span class="pill">Coursera: Statistical Methods</span>
-          <span class="pill">Bloomberg Market Concepts (in progress)</span>
+      <div class="card skill-card reveal" style="margin-top:16px">
+        <h3>Certifications</h3>
+        <div class="stack">
+          <span class="pill">Alteryx Designer Core</span><span class="pill">Microsoft Azure</span><span class="pill">Google Cloud Platform</span><span class="pill">IBM Data Analyst</span><span class="pill">CSCMP Demand Planning</span><span class="pill">McKinsey Forward Program</span>
         </div>
       </div>
     </section>
 
-    <!-- Contact / Footer -->
-    <footer class="text-center py-12 md:py-16">
-      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-white">Let's Connect</h2>
-      <p class="text-lg mb-6 text-gray-400">Open to roles now. Reach out—happy to share code, dashboards, and results.</p>
-      <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
-        <a href="mailto:your.email@example.com" class="bg-[#238636] text-white font-bold py-3 px-6 rounded-full hover:bg-[#3fb950] transition-colors duration-200">Email Me</a>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer" class="bg-transparent text-[#56d46d] font-bold py-3 px-6 rounded-full border border-[#30363d] hover:bg-[#161b22] transition-colors duration-200">LinkedIn</a>
-        <a href="https://github.com/your-handle" target="_blank" rel="noreferrer" class="bg-transparent text-[#56d46d] font-bold py-3 px-6 rounded-full border border-[#30363d] hover:bg-[#161b22] transition-colors duration-200">GitHub</a>
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <h2 class="reveal">Contact</h2>
+      <div class="card reveal">
+        <p>Based in Solihull, UK. Open to roles across the UK and Europe.</p>
+        <p><strong>Email:</strong> <a href="mailto:neogisanj@gmail.com">neogisanj@gmail.com</a> &nbsp;•&nbsp; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sanjananeogi" target="_blank" rel="noreferrer">sanjananeogi</a> &nbsp;•&nbsp; <strong>Phone:</strong> 07503 239328</p>
+        <p><a class="btn" href="assets/Sanjana_Neogi_CV.pdf" download>Download CV (PDF)</a></p>
       </div>
-      <a href="/assets/CV.pdf" download class="text-center text-sm text-gray-500 hover:text-white transition-colors duration-200">Download CV →</a>
-      <div class="mt-6 text-xs text-gray-500">© <span id="yr"></span> Sanjana Neogi • Built with HTML + Tailwind</div>
-    </footer>
-  </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Sanjana Neogi • Built for GitHub Pages</div>
+  </footer>
 
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} })
+    }, {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // Smooth scroll for top nav
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); } });
+    });
   </script>
 </body>
 </html>
