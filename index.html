@@ -65,6 +65,14 @@
     .pill{display:inline-block;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.3px;background:rgba(14,165,233,.12);color:#7dd3fc;border:1px solid rgba(14,165,233,.35)}
     .stack{display:flex;flex-wrap:wrap;gap:10px}
 
+    /* ===== Projects ===== */
+    .project-card{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      height:100%;
+    }
+
     /* ===== Roadmap timeline ===== */
     .roadmap{position:relative}
     .roadmap-canvas{position:relative}
@@ -74,7 +82,8 @@
     .roadcard.card{border-radius:20px}
     @media(min-width:768px){
       .roadmap-svg{display:block;position:absolute;inset:0;pointer-events:none}
-      .roadmap-canvas{height:1600px}
+      /* extra height prevents overlap with following Projects section */
+      .roadmap-canvas{height:2000px}
       .roadcard{position:absolute;width:48%}
       .road-left{left:2%}
       .road-right{right:2%}
@@ -102,6 +111,7 @@
       <div class="links">
         <a href="#intro">Intro</a>
         <a href="#about">About</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
@@ -193,6 +203,25 @@
           <h3>Leading Change: WMG</h3>
           <p>Team lead for GHG inventory & reporting; cut data‑gathering time ~40%, improved integrity ~25%, and set up a repeatable reporting cycle.</p>
           <img class="roadimg" src="https://placehold.co/140x140/238636/0d1117?text=WMG" alt="WMG" style="top:-14px; left:-14px;" />
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects">
+      <h2 class="reveal">Projects</h2>
+      <div class="grid cards">
+        <article class="card reveal project-card">
+          <h3>MSc Dissertation: Monte Carlo Simulation for Hospital Car Parking</h3>
+          <p class="muted">Simulated parking demand to optimise space allocation and cut patient wait times.</p>
+        </article>
+        <article class="card reveal project-card">
+          <h3>Agent AI in Supply Chain Optimisation</h3>
+          <p class="muted">Applied agent-based AI to enhance decision-making and scenario planning in supply chains.</p>
+        </article>
+        <article class="card reveal project-card">
+          <h3>Strategy Dashboard</h3>
+          <p class="muted">Built an interactive dashboard to visualise strategic KPIs for data-driven discussions.</p>
         </article>
       </div>
     </section>
