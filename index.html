@@ -82,7 +82,8 @@
     .roadcard.card{border-radius:20px}
     @media(min-width:768px){
       .roadmap-svg{display:block;position:absolute;inset:0;pointer-events:none}
-      .roadmap-canvas{height:1600px}
+      /* extra height prevents overlap with following Projects section */
+      .roadmap-canvas{height:2000px}
       .roadcard{position:absolute;width:48%}
       .road-left{left:2%}
       .road-right{right:2%}
