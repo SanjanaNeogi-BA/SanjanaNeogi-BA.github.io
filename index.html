@@ -77,12 +77,10 @@
     }
 
     /* ===== Pitch cards ===== */
-    .grid{display:grid;gap:16px}
-    .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:16px;transition:transform .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(2,6,23,.5)}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.3px;background:rgba(14,165,233,.12);color:#7dd3fc;border:1px solid rgba(14,165,233,.35)}
-    .stack{display:flex;flex-wrap:wrap;gap:10px}
+    .grid{ display:grid; gap:16px }
+    .cards{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
+    .card{ background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid var(--border); border-radius:16px; padding:16px; transition:transform .2s ease, box-shadow .2s ease }
+    .card:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(2,6,23,.5) }
 
     /* ===== Roadmap Timeline (50% faded SVG) ===== */
     .roadmap{position:relative;padding:40px 0 80px}
