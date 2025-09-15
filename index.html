@@ -49,32 +49,24 @@
     h2{font-size:22px;margin:0 0 18px;letter-spacing:.5px}
 
     /* ===== HERO ===== */
-    .hero{min-height:100vh;display:flex;align-items:center;padding:100px 0;text-align:center}
-    .hero-container{width:100%;max-width:1000px;margin:0 auto;padding:0 40px}
-    .hero-name{font-size:clamp(48px, 8vw, 72px);font-weight:900;line-height:1;margin:0 0 16px;color:#fff;letter-spacing:-1px}
-    .hero-tagline{font-size:clamp(16px, 2.5vw, 18px);color:var(--muted);margin:0 0 50px;font-weight:400}
-    .profile-container{margin:0 0 40px}
-    .profile-photo{width:320px;height:320px;border-radius:50%;border:4px solid rgba(96,165,250,0.3);object-fit:cover;margin:0 auto;display:block;background:#1e293b;box-shadow:0 20px 50px rgba(0,0,0,0.3)}
-    .hero-skills{display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:12px;max-width:600px;margin:0 auto 50px}
-    .skill-item{padding:10px 16px;background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.25);border-radius:20px;color:#93c5fd;font-size:13px;font-weight:600;text-align:center;transition:all 0.3s ease}
-    .skill-item:hover{background:rgba(96,165,250,0.2);border-color:rgba(96,165,250,0.5);transform:translateY(-2px);color:#dbeafe}
-    .hero-summary{font-size:clamp(18px, 3vw, 22px);line-height:1.6;margin:0 0 50px;max-width:800px;margin-left:auto;margin-right:auto;color:var(--text);font-weight:300}
-    .highlight{color:var(--accent);font-weight:600}
-    .hero-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-    .btn{padding:16px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s ease}
-    .btn-primary{background:linear-gradient(135deg, #2563eb, #0ea5e9);color:white;border:none;box-shadow:0 10px 25px rgba(37,99,235,0.3)}
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(37,99,235,0.4)}
-    .btn-secondary{background:rgba(255,255,255,0.08);color:var(--text);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(10px)}
-    .btn-secondary:hover{background:rgba(255,255,255,0.15);border-color:rgba(96,165,250,0.3);transform:translateY(-2px)}
+    .hero{ display:flex; align-items:center; gap:40px; flex-wrap:wrap; min-height:88vh }
+    .hero .profile-photo{ width:360px; height:360px; border-radius:20px; object-fit:cover; box-shadow:0 20px 50px rgba(0,0,0,.5) }
+    .hero-text{ flex:1; min-width:300px; display:flex; flex-direction:column }
+    .hero-name{ font-size:clamp(40px,6vw,68px); font-weight:900; margin:0 0 12px; color:#fff }
+    .hero-tagline{ font-size:20px; color:var(--muted); margin:0 0 18px }
+    .hero-summary{ font-size:18px; line-height:1.65; margin:0 0 20px }
+    .hero-skills{ display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 24px }
+    .pill{ display:inline-block; padding:8px 12px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.3px; background:rgba(14,165,233,.12); color:#7dd3fc; border:1px solid rgba(14,165,233,.35) }
+    .hero-buttons{ display:flex; gap:14px; flex-wrap:wrap; margin-top:auto }
+    .btn{ padding:14px 24px; border-radius:12px; font-weight:800; font-size:14px; transition:all .25s ease; border:1px solid rgba(255,255,255,.15) }
+    .btn-primary{ background:linear-gradient(135deg,#2563eb,#0ea5e9); color:#fff; border:none; box-shadow:0 10px 25px rgba(37,99,235,.28) }
+    .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(37,99,235,.36) }
+    .btn-secondary{ background:rgba(255,255,255,0.08); color:var(--text) }
+    .btn-secondary:hover{ background:rgba(255,255,255,0.15) }
 
-    @media(max-width:768px){
-      .hero{padding:80px 0}
-      .hero-container{padding:0 20px}
-      .profile-photo{width:350px; height:350px}
-      .hero-skills{grid-template-columns:repeat(2, 1fr); max-width:350px}
-      .hero-buttons{gap:15px}
-      .btn{padding:14px 24px; font-size:14px}
-    }
+    @media(max-width:860px){ .hero .profile-photo{ width:300px; height:300px } }
+
+
 
     /* ===== Pitch cards ===== */
     .grid{ display:grid; gap:16px }
