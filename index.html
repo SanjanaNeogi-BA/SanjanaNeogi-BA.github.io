@@ -302,26 +302,30 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
             <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                 <!-- Tab Buttons (Flex container for horizontal tabs) -->
                 <div class="flex flex-col sm:flex-row border-b border-gray-700 bg-bg-dark-main" id="tab-list">
-                    <!-- Tab Button 1: LCA -->
+                    <!-- Tab Button 1: ESG Dashboard -->
                     <button id="tab-button-water" data-tab-id="water" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tl-xl border-b sm:border-b-0">
-                        Smart Cane: An LCA
+                        ESG Insight Dashboard with SMART KPIs
                     </button>
-                    <!-- Tab Button 2: Emissions Dashboard -->
+                    <!-- Tab Button 2: Dynamic Pricing & Revenue Maximisation -->
                     <button id="tab-button-solar" data-tab-id="solar" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main border-y sm:border-y-0 sm:border-x border-gray-700">
-                        Mushroom Emissions Dashboard
+                        A Dynamic Pricing Elasticity Model for Product Inventory
                     </button>
-                    <!-- Tab Button 3: ESG Strategy -->
+                    <!-- Tab Button 3: A Data Product Blueprint -->
                     <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
-                        Impact Strategy Slide Deck
+                        Funnel Conversion & Metric Definition (A Data Product Blueprint)
+                    </button>
+                    <!-- Tab Button 4: NHS Access Modelling and Scenario Analysis -->
+                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
+                       NHS Access Modelling and Scenario Analysis - MS Dissertation
                     </button>
                 </div>
 
                 <!-- Tab Content Area -->
                 <div id="tab-content" class="p-8 bg-card-bg text-bg-dark-main">
                     
-                    <!-- Project Panel 1: Smart Cane LCA (Default Active) -->
+                    <!-- Project Panel 1: ESG Dashboard (Default Active) -->
                     <div id="project-panel-water" class="project-panel">
-                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Smart Cane: Life Cycle Assessment (LCA)</h3>
+                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">ESG Insight Dashboard with SMART KPIs</h3>
                         <p class="text-gray-700 italic mb-4">Cradle-to-gate LCA conducted using self-taught OpenLCA of a self-designed medical device.</p>
                         <p class="text-gray-800 mb-6">
                             This Life Cycle Assessment (LCA) demonstrates my ability to conduct cradle-to-gate environmental analysis for new medical devices using **OpenLCA** and Ecoinvent data. The project analyzed material selection, manufacturing processes, and end-of-life options for a smart mobility aid, identifying key hot spots in the supply chain (specifically material sourcing) that accounted for **65% of the total carbon footprint**. The final output included detailed inventory data in Excel and a comparative report used to influence design decisions for a lighter-impact prototype.
@@ -337,7 +341,7 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                         </a>
                     </div>
 
-                    <!-- Project Panel 2: Mushroom Emissions Dashboard -->
+                    <!-- Project Panel 2: A Dynamic Pricing Elasticity Model for Product Inventory -->
                     <div id="project-panel-solar" class="project-panel hidden">
                         <h3 class="text-3xl font-bold text-highlight-accent mb-3">Mushroom Emissions Dashboard (PowerBI)</h3>
                         <p class="text-gray-700 italic mb-4">Dynamic dashboard tracking and simulating Scope 1, 2, and 3 emissions for an agricultural client.</p>
@@ -355,7 +359,24 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                         </a>
                     </div>
 
-                    <!-- Project Panel 3: Impact Strategy Slide Deck -->
+                    <!-- Project Panel 3: Funnel Conversion & Metric Definition (A Data Product Blueprint) -->
+                    <div id="project-panel-esg" class="project-panel hidden">
+                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Social Impact Strategy Slide Deck</h3>
+                        <p class="text-gray-700 italic mb-4">Strategic communication tool for institutional fundraising and stakeholder reporting.</p>
+                        <p class="text-gray-800 mb-6">
+                            This high-level strategic slide deck was developed for a non-profit client seeking institutional funding, focusing on quantifying their social and environmental impact. The analysis integrated Social Value monetization principles (utilizing the **TOMs framework**) with traditional financial metrics, demonstrating a quantifiable **£5 return on investment for every £1 invested** in their community programs. This deck was crucial in structuring their pitch and successfully securing their first round of seed funding.
+                        </p>
+                        <div class="mt-4">
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">ESG Strategy</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Social Value (TOMs)</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Strategic Communication</span>
+                        </div>
+                        <a href="https://github.com/fbullwright2/Impact-Strategy-Case-Study" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
+                            View Project on GitHub
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5M17 7l-5-5"></path></svg>
+                        </a>
+                    </div>
+                     <!-- Project Panel 4: NHS Access Modelling and Scenario Analysis - MS Dissertation  -->
                     <div id="project-panel-esg" class="project-panel hidden">
                         <h3 class="text-3xl font-bold text-highlight-accent mb-3">Social Impact Strategy Slide Deck</h3>
                         <p class="text-gray-700 italic mb-4">Strategic communication tool for institutional fundraising and stakeholder reporting.</p>
