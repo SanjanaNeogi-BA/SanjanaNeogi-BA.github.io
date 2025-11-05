@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;
+    --bg: #0b1020;
       --card: #11162a;
       --muted: #93a4bd;
       --text: #e6eefc;
@@ -20,11 +20,24 @@
       --ring: rgba(96,165,250,0.5);
       --border: rgba(148,163,184,0.15);
       --brand: #238636;
+          
+            --bg-dark-main: #1f2937; /* Slate 800 (Dark background for body/tabs) */
+            --text-text-light: #f3f4f6; /* Gray 100 (Light text on dark) */
+            --highlight-accent: #10b981; /* Emerald 500 (Used for heading accents) */
+            /* UPDATED: Changed from standard Blue 500 to a vibrant Sky Blue */
+            --blue-accent: #0ea5e9; /* Sky 500 (Used for active tab background) */
+            --medium-accent: #10b981; /* Emerald 500 */
+            --card-bg: #ffffff; /* White (Light background for content) */
+    
     }
     .active-tab {
             /* Styles for the currently selected tab button */
             background-color: var(--highlight-accent);
             color: var(--bg-dark-main);
+        }
+     .tab-button:hover {
+            background-color: var(--blue-accent); /* New Sky Blue hover background */
+            color: var(--bg-dark-main); /* Dark text on hover */
         }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -295,28 +308,32 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
 
     <!-- ===== Projects ===== -->
     
-    <div class="max-w-4xl w-full">
+    <div class="max-w-6xl w-full">
         <section id="projects" class="py-16">
             <h2 class="text-4xl font-bold section-heading text-medium-accent mb-8 text-center sm:text-left">Key Projects</h2>
             
             <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                 <!-- Tab Buttons (Flex container for horizontal tabs) -->
                 <div class="flex flex-col sm:flex-row border-b border-gray-700 bg-bg-dark-main" id="tab-list">
-                    <!-- Tab Button 1: ESG Dashboard -->
-                    <button id="tab-button-water" data-tab-id="water" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tl-xl border-b sm:border-b-0">
+                    
+                    <!-- Tab Button 1: ESG Dashboard (Added sm:border-r for divider) -->
+                    <button id="tab-button-water" data-tab-id="water" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tl-xl border-b sm:border-b-0 sm:border-r border-gray-700">
                         ESG Insight Dashboard
                     </button>
-                    <!-- Tab Button 2: Dynamic Pricing & Revenue Maximisation -->
-                    <button id="tab-button-solar" data-tab-id="solar" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main border-y sm:border-y-0 sm:border-x border-gray-700">
+                    
+                    <!-- Tab Button 2: Dynamic Pricing & Revenue Maximisation (Changed sm:border-x to sm:border-r for consistent right divider) -->
+                    <button id="tab-button-solar" data-tab-id="solar" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main border-y sm:border-y-0 sm:border-r border-gray-700">
                         A Dynamic Pricing Elasticity Model for Product Inventory
                     </button>
-                    <!-- Tab Button 3: A Data Product Blueprint -->
-                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
-                        Funnel Conversion & Metric Definition (A Data Product Blueprint)
+                    
+                    <!-- Tab Button 3: A Data Product Blueprint (Added sm:border-r for divider between 3 and 4) -->
+                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main border-y sm:border-y-0 sm:border-r border-gray-700">
+                       A Data Product Blueprint
                     </button>
-                    <!-- Tab Button 4: NHS Access Modelling and Scenario Analysis -->
-                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
-                       NHS Access Modelling and Scenario Analysis - MS Dissertation
+                    
+                    <!-- Tab Button 4: MS Dissertation (Right corner radius) -->
+                    <button id="tab-button-dissertation" data-tab-id="dissertation" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
+                      MS Dissertation
                     </button>
                 </div>
 
@@ -326,16 +343,16 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                     <!-- Project Panel 1: ESG Dashboard (Default Active) -->
                     <div id="project-panel-water" class="project-panel">
                         <h3 class="text-3xl font-bold text-highlight-accent mb-3">ESG Insight Dashboard with SMART KPIs</h3>
-                        <p class="text-gray-700 italic mb-4">Cradle-to-gate LCA conducted using self-taught OpenLCA of a self-designed medical device.</p>
+                        <p class="text-gray-700 italic mb-4">Developed a PowerBI dashboard to track and analyze ESG performance metrics using a customized SMART KPI framework.</p>
                         <p class="text-gray-800 mb-6">
-                            This Life Cycle Assessment (LCA) demonstrates my ability to conduct cradle-to-gate environmental analysis for new medical devices using **OpenLCA** and Ecoinvent data. The project analyzed material selection, manufacturing processes, and end-of-life options for a smart mobility aid, identifying key hot spots in the supply chain (specifically material sourcing) that accounted for **65% of the total carbon footprint**. The final output included detailed inventory data in Excel and a comparative report used to influence design decisions for a lighter-impact prototype.
+                            This project involved defining and implementing **SMART Key Performance Indicators (KPIs)** across environmental, social, and governance domains. The resulting interactive dashboard allowed stakeholders to benchmark progress, identify areas of risk (e.g., water intensity), and simulate the financial impact of sustainability initiatives. The solution integrated data from disparate sources, demonstrating strong skills in data governance, business intelligence, and strategic reporting to meet institutional ESG requirements.
                         </p>
                         <div class="mt-4">
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">LCA (OpenLCA)</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">GHG Protocol</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Material Flow Analysis</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">PowerBI & ETL</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">ESG Reporting (GRI/SASB)</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">SMART KPIs</span>
                         </div>
-                        <a href="https://github.com/fbullwright2/SmartCane-LCA-Project" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
+                        <a href="https://github.com/fbullwright2/ESG-Insight-Dashboard" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
                             View Project on GitHub
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5M17 7l-5-5"></path></svg>
                         </a>
@@ -343,52 +360,55 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
 
                     <!-- Project Panel 2: A Dynamic Pricing Elasticity Model for Product Inventory -->
                     <div id="project-panel-solar" class="project-panel hidden">
-                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Mushroom Emissions Dashboard (PowerBI)</h3>
-                        <p class="text-gray-700 italic mb-4">Dynamic dashboard tracking and simulating Scope 1, 2, and 3 emissions for an agricultural client.</p>
+                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Dynamic Pricing Elasticity Model</h3>
+                        <p class="text-gray-700 italic mb-4">Developed an econometric model in Python to maximize revenue based on inventory, time-to-sale, and price sensitivity.</p>
                         <p class="text-gray-800 mb-6">
-                            Developed an interactive **PowerBI dashboard** to track and visualize Scope 1, 2, and 3 emissions across a diverse mushroom cultivation operation. The analysis isolated emissions intensity by mushroom variety, substrate type, and heating source, enabling the client to simulate five different Net-Zero pathways. The dashboard exposed that **Scope 3 (purchased goods and services) was 80% of total emissions**, driving a new focus on sustainable procurement strategies and vendor engagement.
+                            This project focused on building a predictive pricing model for e-commerce inventory management. Using **Python (Pandas, Statsmodels)**, I quantified the price elasticity of demand across various product categories and implemented a daily optimization routine. The model dynamically recommended price adjustments to clear surplus inventory while maximizing revenue, resulting in a **4.5% increase in gross profit** during back-testing, demonstrating expertise in statistical modeling and revenue optimization.
                         </p>
                         <div class="mt-4">
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">PowerBI & MS Fabric</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">GHG Scope 3 Analysis</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Data Visualization</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Econometrics (Python)</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Revenue Maximization</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Inventory Forecasting</span>
                         </div>
-                        <a href="https://github.com/fbullwright2/Mushroom-Emissions-Dashboard" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
+                        <a href="https://github.com/fbullwright2/Dynamic-Pricing-Model" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
                             View Project on GitHub
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5M17 7l-5-5"></path></svg>
                         </a>
                     </div>
 
-                    <!-- Project Panel 3: Funnel Conversion & Metric Definition (A Data Product Blueprint) -->
+                    <!-- Project Panel 3: A Data Product Blueprint -->
                     <div id="project-panel-esg" class="project-panel hidden">
-                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Social Impact Strategy Slide Deck</h3>
-                        <p class="text-gray-700 italic mb-4">Strategic communication tool for institutional fundraising and stakeholder reporting.</p>
+                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">A Data Product Blueprint: Funnel Conversion & Metric Definition</h3>
+                        <p class="text-gray-700 italic mb-4">Defined core metrics (e.g., CAC, LTV) and designed the end-to-end data pipeline for a new customer acquisition product.</p>
                         <p class="text-gray-800 mb-6">
-                            This high-level strategic slide deck was developed for a non-profit client seeking institutional funding, focusing on quantifying their social and environmental impact. The analysis integrated Social Value monetization principles (utilizing the **TOMs framework**) with traditional financial metrics, demonstrating a quantifiable **£5 return on investment for every £1 invested** in their community programs. This deck was crucial in structuring their pitch and successfully securing their first round of seed funding.
+                            I developed a comprehensive blueprint for a high-impact B2B SaaS data product, focusing on rigorous metric definition (SMART KPIs) and data governance. This involved mapping the customer funnel to key conversion metrics, ensuring data lineage, and recommending a modern data stack (Snowflake, dbt, Fivetran). The final blueprint provided engineering teams with clear documentation to build a reliable and scalable product, **reducing reporting latency by over 40%** and ensuring a single source of truth for business metrics.
                         </p>
                         <div class="mt-4">
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">ESG Strategy</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Social Value (TOMs)</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Strategic Communication</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Data Product Management</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Metric Definition (SMART)</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">dbt/ETL</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Data Governance</span>
                         </div>
-                        <a href="https://github.com/fbullwright2/Impact-Strategy-Case-Study" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
+                        <a href="https://github.com/fbullwright2/Data-Product-Blueprint" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
                             View Project on GitHub
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5M17 7l-5-5"></path></svg>
                         </a>
                     </div>
-                     <!-- Project Panel 4: NHS Access Modelling and Scenario Analysis - MS Dissertation  -->
-                    <div id="project-panel-esg" class="project-panel hidden">
-                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">Social Impact Strategy Slide Deck</h3>
-                        <p class="text-gray-700 italic mb-4">Strategic communication tool for institutional fundraising and stakeholder reporting.</p>
+                     
+                    <!-- Project Panel 4: NHS Access Modelling and Scenario Analysis - MS Dissertation (NEW) -->
+                    <div id="project-panel-dissertation" class="project-panel hidden">
+                        <h3 class="text-3xl font-bold text-highlight-accent mb-3">MS Dissertation: NHS Access Modelling and Scenario Analysis</h3>
+                        <p class="text-gray-700 italic mb-4">Discrete-event simulation model to assess the impact of demand/supply shocks on UK primary care wait times.</p>
                         <p class="text-gray-800 mb-6">
-                            This high-level strategic slide deck was developed for a non-profit client seeking institutional funding, focusing on quantifying their social and environmental impact. The analysis integrated Social Value monetization principles (utilizing the **TOMs framework**) with traditional financial metrics, demonstrating a quantifiable **£5 return on investment for every £1 invested** in their community programs. This deck was crucial in structuring their pitch and successfully securing their first round of seed funding.
+                            My Master's dissertation utilized **Discrete-Event Simulation (DES) in Python (SimPy)** to model patient flow and resource utilization within the National Health Service (NHS). I developed a robust model to simulate changes in staffing levels, seasonal demand, and facility capacity. Key findings indicated that a **10% increase in administrative support reduced patient wait times by 22%**, significantly more effective than comparable investment in clinical staff. This project showcases advanced analytical modeling and strategic recommendation skills.
                         </p>
                         <div class="mt-4">
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">ESG Strategy</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Social Value (TOMs)</span>
-                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Strategic Communication</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Discrete-Event Simulation (DES)</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Python/SimPy</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Operations Research</span>
+                            <span class="inline-block bg-text-light text-bg-dark-main text-sm font-medium px-3 py-1 rounded-full mr-2">Public Policy</span>
                         </div>
-                        <a href="https://github.com/fbullwright2/Impact-Strategy-Case-Study" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
+                        <a href="https://github.com/fbullwright2/NHS-Access-Modelling" target="_blank" class="mt-6 inline-flex items-center text-highlight-accent hover:text-medium-accent font-medium transition duration-300">
                             View Project on GitHub
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l-5 5M17 7l-5-5"></path></svg>
                         </a>
@@ -398,7 +418,7 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
         </section>
     </div>
   
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('.tab-button');
             const projectPanels = document.querySelectorAll('.project-panel');
@@ -407,8 +427,11 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
             const setActiveTab = (tabId) => {
                 // 1. Deactivate all buttons and panels
                 tabButtons.forEach(button => {
-                    button.classList.remove('active-tab', 'text-bg-dark-main');
+                    button.classList.remove('active-tab');
+                    // Ensure the button styling returns to default dark mode
                     button.classList.add('text-text-light', 'bg-bg-dark-main');
+                    // Remove hover classes, as they are now handled by pure CSS :hover
+                    button.classList.remove('hover:bg-highlight-accent', 'hover:text-bg-dark-main');
                 });
 
                 projectPanels.forEach(panel => {
@@ -416,7 +439,7 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                 });
 
                 // 2. Activate the selected button
-                const activeTabButton = document.querySelector(`#tab-button-${tabId}`);
+                const activeTabButton = document.querySelector(`[data-tab-id="${tabId}"]`);
                 if (activeTabButton) {
                     activeTabButton.classList.add('active-tab');
                     activeTabButton.classList.remove('text-text-light', 'bg-bg-dark-main');
@@ -441,7 +464,6 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
             setActiveTab('water');
         });
     </script>
-    
 
     <!-- ===== Skills & Certifications ===== -->
     <section id="skills">
