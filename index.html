@@ -115,6 +115,49 @@
 
     /* ===== Skills ===== */
     .skill-card{border-radius:20px;padding:24px}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const projectPanels = document.querySelectorAll('.project-panel');
+
+            // Function to set the active tab and display the corresponding panel
+            const setActiveTab = (tabId) => {
+                // 1. Deactivate all buttons and panels
+                tabButtons.forEach(button => {
+                    button.classList.remove('active-tab', 'text-bg-dark-main');
+                    button.classList.add('text-text-light', 'bg-bg-dark-main');
+                });
+
+                projectPanels.forEach(panel => {
+                    panel.classList.add('hidden');
+                });
+
+                // 2. Activate the selected button
+                const activeTabButton = document.querySelector(`#tab-button-${tabId}`);
+                if (activeTabButton) {
+                    activeTabButton.classList.add('active-tab');
+                    activeTabButton.classList.remove('text-text-light', 'bg-bg-dark-main');
+                }
+
+                // 3. Display the selected panel
+                const activePanel = document.querySelector(`#project-panel-${tabId}`);
+                if (activePanel) {
+                    activePanel.classList.remove('hidden');
+                }
+            };
+
+            // Set up event listeners for all tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab-id');
+                    setActiveTab(tabId);
+                });
+            });
+
+            // Set the default active tab on load (The first tab, 'water')
+            setActiveTab('water');
+        });
+    </script>
 
     /* ===== Reveal Animations ===== */
     .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
@@ -280,14 +323,15 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
     </section>
 
     <!-- ===== Projects ===== -->
-     <section id="projects" class="py-16">
-            <h2 class="text-4xl font-bold section-heading text-medium-accent mb-8">Key Projects</h2>
+    <div class="max-w-4xl w-full">
+        <section id="projects" class="py-16">
+            <h2 class="text-4xl font-bold section-heading text-medium-accent mb-8 text-center sm:text-left">Key Projects</h2>
             
             <div class="rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                 <!-- Tab Buttons (Flex container for horizontal tabs) -->
                 <div class="flex flex-col sm:flex-row border-b border-gray-700 bg-bg-dark-main" id="tab-list">
                     <!-- Tab Button 1: LCA -->
-                    <button id="tab-button-water" data-tab-id="water" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tl-xl">
+                    <button id="tab-button-water" data-tab-id="water" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tl-xl border-b sm:border-b-0">
                         Smart Cane: An LCA
                     </button>
                     <!-- Tab Button 2: Emissions Dashboard -->
@@ -295,7 +339,7 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                         Mushroom Emissions Dashboard
                     </button>
                     <!-- Tab Button 3: ESG Strategy -->
-                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl">
+                    <button id="tab-button-esg" data-tab-id="esg" class="tab-button flex-1 py-4 px-6 text-lg font-semibold transition duration-300 cursor-pointer text-text-light bg-bg-dark-main hover:bg-highlight-accent hover:text-bg-dark-main sm:rounded-tr-xl border-t sm:border-t-0">
                         Impact Strategy Slide Deck
                     </button>
                 </div>
@@ -304,7 +348,7 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                 <div id="tab-content" class="p-8 bg-card-bg text-bg-dark-main">
                     
                     <!-- Project Panel 1: Smart Cane LCA (Default Active) -->
-                    <div id="project-panel-water" class="project-panel hidden">
+                    <div id="project-panel-water" class="project-panel">
                         <h3 class="text-3xl font-bold text-highlight-accent mb-3">Smart Cane: Life Cycle Assessment (LCA)</h3>
                         <p class="text-gray-700 italic mb-4">Cradle-to-gate LCA conducted using self-taught OpenLCA of a self-designed medical device.</p>
                         <p class="text-gray-800 mb-6">
@@ -359,32 +403,8 @@ MSc Business Analytics (Warwick) with 2+ years in global supply chain at Novarti
                 </div>
             </div>
         </section>
-   <section id="projects"> 
-      <h2 class="reveal">Selected Projects</h2>
-      <div class="grid cards">
-        <article class="card project-card reveal">
-          <small class="muted">2025 • MSc Dissertation</small>
-          <h3>Hospital Accessibility Scenario Model</h3>
-          <p>Interactive Python/Streamlit model linking car‑park congestion to missed appointments and emissions; informs NHS Midlands planning.</p>
-          <div class="stack"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Streamlit</span></div>
-          <a href="#" class="muted">Read more →</a>
-        </article>
-        <article class="card project-card reveal">
-          <small class="muted">2024 • Novartis</small>
-          <h3>Supplier Sustainability & KPI Platform</h3>
-          <p>Power BI + Alteryx toolkit to assess 800+ vendors against sustainability KPIs; accelerated contract reviews and reduced turnaround times.</p>
-          <div class="stack"><span class="pill">Power BI</span><span class="pill">Alteryx</span><span class="pill">SQL</span></div>
-          <a href="#" class="muted">Read more →</a>
-        </article>
-        <article class="card project-card reveal">
-          <small class="muted">2021 • Academic</small>
-          <h3>Agent‑Based COVID‑19 Simulation</h3>
-          <p>Python MESA model with demographics and behaviour; explored mobility, vaccination and PPE policy impacts.</p>
-          <div class="stack"><span class="pill">Python</span><span class="pill">MESA</span></div>
-          <a href="#" class="muted">Read more →</a>
-        </article>
-      </div>
-    </section>
+    </div>
+
 
     <!-- ===== Skills & Certifications ===== -->
     <section id="skills">
